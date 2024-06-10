@@ -25,17 +25,27 @@ function Add-BrickStoreItem {
 
         [Parameter()]
         [ValidateNotNullOrEmpty()]
-        [string]$Remarks
+        [string]$Remarks,
+
+        [Parameter()]
+        [ValidateNotNullOrEmpty()]
+        [decimal]$Price,
+
+        [Parameter()]
+        [ValidateNotNullOrEmpty()]
+        [int]$BulkQuantity
     )
 
     $ErrorActionPreference = 'Stop'
 
     $paramToXmlMap = @{
-        ItemNumber = 'ItemID'
-        ColorId    = 'ColorID'
-        Quantity   = 'Qty'
-        Condition  = 'Condition'
-        Remarks = 'Remarks'
+        ItemNumber   = 'ItemID'
+        ColorId      = 'ColorID'
+        Quantity     = 'Qty'
+        Condition    = 'Condition'
+        Remarks      = 'Remarks'
+        Price        = 'Price'
+        BulkQuantity = 'Bulk'
     }
 
     if (-not (Test-Path -Path $FilePath -PathType Leaf)) {
