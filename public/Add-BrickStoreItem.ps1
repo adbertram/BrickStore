@@ -33,7 +33,7 @@ function Add-BrickStoreItem {
 
         [Parameter()]
         [ValidateNotNullOrEmpty()]
-        [int]$MinQuantity,
+        [int]$BulkQuantity,
 
         [Parameter()]
         [ValidateNotNullOrEmpty()]
@@ -54,7 +54,7 @@ function Add-BrickStoreItem {
         Condition    = 'Condition'
         Remarks      = 'Remarks'
         Price        = 'Price'
-        MinQuantity = 'Bulk'
+        BulkQuantity = 'Bulk'
         Location     = 'Remarks'
         ItemType     = 'ItemTypeID'
     }
