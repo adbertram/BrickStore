@@ -33,7 +33,16 @@ function Add-BrickStoreItem {
 
         [Parameter()]
         [ValidateNotNullOrEmpty()]
-        [int]$BulkQuantity
+        [int]$MinQuantity,
+
+        [Parameter()]
+        [ValidateNotNullOrEmpty()]
+        [string]$Location,
+
+        [Parameter()]
+        [ValidateNotNullOrEmpty()]
+        [ValidateSet('P','M')]
+        [string]$ItemType = 'P'
     )
 
     $ErrorActionPreference = 'Stop'
@@ -45,7 +54,9 @@ function Add-BrickStoreItem {
         Condition    = 'Condition'
         Remarks      = 'Remarks'
         Price        = 'Price'
-        BulkQuantity = 'Bulk'
+        MinQuantity = 'Bulk'
+        Location     = 'Remarks'
+        ItemType     = 'ItemTypeID'
     }
 
     if (-not (Test-Path -Path $FilePath -PathType Leaf)) {
